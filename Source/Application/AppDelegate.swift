@@ -6,7 +6,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let shared = UIApplication.shared.delegate as! AppDelegate
     
     var window: UIWindow?
-    var network: NetworkManager!
+    private var network: NetworkManager!
+    private lazy var router: Router = Router(window: window!)
+
+    static func getNetwork() -> NetworkManager {
+        return shared.network
+    }
+
+    static func getRouter() -> Router {
+        return shared.router
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
