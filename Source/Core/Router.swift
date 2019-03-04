@@ -6,6 +6,7 @@ class Router {
     private enum Screen: String {
         case predictionsMake
         case predictionsResults
+        case scorePicker
     }
 
     private weak var window: UIWindow?
@@ -21,6 +22,14 @@ class Router {
 
     func showPredictionsResults() {
         switchToVC(.predictionsResults)
+    }
+
+    func presentScorePicker(prediction: Prediction, context: UIViewController) {
+        let vc = storyboard.instantiateViewController(withIdentifier: Screen.scorePicker.rawValue) as! ScorePickerViewController
+        vc.prediction = prediction
+
+        vc.modalPresentationStyle = .overFullScreen
+        context.present(vc, animated: false)
     }
 
     private func switchToVC(_ screen: Screen) {

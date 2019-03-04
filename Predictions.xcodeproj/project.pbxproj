@@ -11,6 +11,7 @@
 		471482BC7CA13C141C9A3642 /* PredictionsMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471482874213C28ED93C1129 /* PredictionsMakeViewController.swift */; };
 		4714832D09A059D5D336ACB7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148CCFA584E9E24CE71C3D /* MainViewController.swift */; };
 		4714836B61C894155E18DC59 /* PredictionMakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714821C000CDF9DA8153010 /* PredictionMakeCell.swift */; };
+		471483973114BCCE06B8B61B /* ScorePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471482DF2D457412A34B65FF /* ScorePickerViewController.swift */; };
 		471489AB5EBB7F778C005776 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471482F8FE7CCFA2ADA35E19 /* Router.swift */; };
 		471489F77EDD8CEF450A3472 /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148F4AB55FC24E64623645 /* Prediction.swift */; };
 		47148BB09547D4091D8CF3BC /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714850BB9AAE03392612406 /* Formatter.swift */; };
@@ -31,6 +32,7 @@
 		471480B4C600C994BBC8BEA1 /* PredictionsMakeAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionsMakeAdapter.swift; sourceTree = "<group>"; };
 		4714821C000CDF9DA8153010 /* PredictionMakeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionMakeCell.swift; sourceTree = "<group>"; };
 		471482874213C28ED93C1129 /* PredictionsMakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionsMakeViewController.swift; sourceTree = "<group>"; };
+		471482DF2D457412A34B65FF /* ScorePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorePickerViewController.swift; sourceTree = "<group>"; };
 		471482F8FE7CCFA2ADA35E19 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4714850BB9AAE03392612406 /* Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		47148CCFA584E9E24CE71C3D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -80,13 +82,6 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		47148F40540C0C76780605F1 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		6FC519C8A95F6C192A0FEDD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +126,6 @@
 				97AAD1E7222DA72900BBC7F5 /* Core */,
 				97AAD1D9222DA1F300BBC7F5 /* Application */,
 				97AAD1DB222DA1F300BBC7F5 /* Screen */,
-				47148F40540C0C76780605F1 /* Extension */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -151,6 +145,7 @@
 				97AAD1DD222DA1F300BBC7F5 /* Main.storyboard */,
 				47148877CDF7BE240A7C5552 /* PredictionsMake */,
 				471489215D17DD1623CC7973 /* Main */,
+				471482DF2D457412A34B65FF /* ScorePickerViewController.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -318,6 +313,7 @@
 				47148BB09547D4091D8CF3BC /* Formatter.swift in Sources */,
 				471489AB5EBB7F778C005776 /* Router.swift in Sources */,
 				4714832D09A059D5D336ACB7 /* MainViewController.swift in Sources */,
+				471483973114BCCE06B8B61B /* ScorePickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
