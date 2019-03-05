@@ -97,10 +97,16 @@
                                     <action selector="makePredictionsAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="rC0-R5-a7b"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPm-0z-2ad">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPm-0z-2ad">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Predictions" id="Xoe-tu-VuP"/>
+                                    <navigationItem title="Predictions" id="Xoe-tu-VuP">
+                                        <barButtonItem key="leftBarButtonItem" title="Autofill" id="Dw3-gD-luF">
+                                            <connections>
+                                                <action selector="autofillAction" destination="BYZ-38-t0r" id="Efs-by-32j"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -136,7 +142,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4q-G5-mYz">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4n-tY-uus">
+                                <rect key="frame" x="20" y="218.5" width="335" height="230"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4q-G5-mYz">
                                 <rect key="frame" x="20" y="218.5" width="335" height="230"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manchester United" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NW-gh-mqr">
@@ -157,21 +167,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S38-SR-Nju">
-                                        <rect key="frame" x="101" y="37" width="50" height="116"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="vFL-Wz-dOK"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="dataSource" destination="406-2K-dcU" id="ILn-bf-szY"/>
-                                            <outlet property="delegate" destination="406-2K-dcU" id="Efe-Mt-Cxv"/>
-                                        </connections>
-                                    </pickerView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Tu-S8-yNp">
-                                        <rect key="frame" x="184.5" y="37" width="50" height="116"/>
+                                        <rect key="frame" x="184.5" y="37" width="70" height="116"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="116" id="2W1-VV-gqq"/>
-                                            <constraint firstAttribute="width" constant="50" id="AKU-Wb-Ny2"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="dataSource" destination="406-2K-dcU" id="SvK-bh-ajs"/>
@@ -199,6 +198,16 @@
                                             <action selector="makePredictionsAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Sm-HW-XsY"/>
                                         </connections>
                                     </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S38-SR-Nju">
+                                        <rect key="frame" x="81" y="37" width="70" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="vFL-Wz-dOK"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="406-2K-dcU" id="ILn-bf-szY"/>
+                                            <outlet property="delegate" destination="406-2K-dcU" id="Efe-Mt-Cxv"/>
+                                        </connections>
+                                    </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -212,6 +221,7 @@
                                     <constraint firstItem="4NW-gh-mqr" firstAttribute="top" secondItem="h4q-G5-mYz" secondAttribute="top" constant="10" id="WAd-Ah-ye5"/>
                                     <constraint firstItem="pOo-wv-tcW" firstAttribute="centerX" secondItem="h4q-G5-mYz" secondAttribute="centerX" id="auJ-Rq-nOv"/>
                                     <constraint firstItem="pOo-wv-tcW" firstAttribute="centerY" secondItem="h4q-G5-mYz" secondAttribute="centerY" constant="-20" id="bWc-eT-5bB"/>
+                                    <constraint firstItem="2Tu-S8-yNp" firstAttribute="width" secondItem="S38-SR-Nju" secondAttribute="width" id="c9r-MR-FK4"/>
                                     <constraint firstItem="8hf-ry-zTH" firstAttribute="top" secondItem="tMT-Xs-8PX" secondAttribute="bottom" constant="10" id="dHc-Ow-oBb"/>
                                     <constraint firstItem="S38-SR-Nju" firstAttribute="height" secondItem="2Tu-S8-yNp" secondAttribute="height" id="eei-vS-Csh"/>
                                     <constraint firstItem="S38-SR-Nju" firstAttribute="centerY" secondItem="pOo-wv-tcW" secondAttribute="centerY" id="q6X-q7-eIm"/>
@@ -224,7 +234,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="O4n-tY-uus" firstAttribute="bottom" secondItem="h4q-G5-mYz" secondAttribute="bottom" id="37z-jl-xZS"/>
+                            <constraint firstItem="O4n-tY-uus" firstAttribute="trailing" secondItem="h4q-G5-mYz" secondAttribute="trailing" id="8Hq-cG-Lda"/>
                             <constraint firstItem="h4q-G5-mYz" firstAttribute="centerY" secondItem="HdG-HO-kHS" secondAttribute="centerY" id="Kk3-Kw-5Sb"/>
+                            <constraint firstItem="O4n-tY-uus" firstAttribute="leading" secondItem="h4q-G5-mYz" secondAttribute="leading" id="ac8-xo-vV0"/>
+                            <constraint firstItem="O4n-tY-uus" firstAttribute="top" secondItem="h4q-G5-mYz" secondAttribute="top" id="fS4-GZ-j8h"/>
                             <constraint firstItem="9au-Ae-JkQ" firstAttribute="trailing" secondItem="h4q-G5-mYz" secondAttribute="trailing" constant="20" id="qcV-x5-lYM"/>
                             <constraint firstItem="h4q-G5-mYz" firstAttribute="leading" secondItem="9au-Ae-JkQ" secondAttribute="leading" constant="20" id="vKx-jY-low"/>
                         </constraints>
@@ -232,6 +246,7 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="h4q-G5-mYz" id="n4s-Wf-TLM"/>
+                        <outlet property="shadowView" destination="O4n-tY-uus" id="IBL-ZG-6VP"/>
                         <outlet property="team1Label" destination="4NW-gh-mqr" id="tYd-QY-pb8"/>
                         <outlet property="team1ScorePicker" destination="S38-SR-Nju" id="GEk-lU-Nmq"/>
                         <outlet property="team2Label" destination="tMT-Xs-8PX" id="oS5-tb-xDm"/>

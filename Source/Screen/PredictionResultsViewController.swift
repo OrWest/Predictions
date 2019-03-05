@@ -2,6 +2,8 @@ import UIKit
 
 class PredictionResultsViewController: UIViewController {
 
+    var predictions: [Prediction] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

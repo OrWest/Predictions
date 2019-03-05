@@ -20,22 +20,30 @@ class Router {
         switchToVC(.predictionsMake)
     }
 
-    func showPredictionsResults() {
-        switchToVC(.predictionsResults)
+    func showPredictionsResults(predictions: [Prediction]) {
+        switchToVC(.predictionsResults) { vc in
+            guard let controller = vc as? PredictionResultsViewController else {
+                return
+            }
+
+            controller.predictions = predictions
+        }
     }
 
-    func presentScorePicker(prediction: Prediction, context: UIViewController) {
+    func presentScorePicker(prediction: Prediction, context: UIViewController, dismissAction: @escaping () -> Void) {
         let vc = storyboard.instantiateViewController(withIdentifier: Screen.scorePicker.rawValue) as! ScorePickerViewController
         vc.prediction = prediction
+        vc.dismissAction = dismissAction
 
         vc.modalPresentationStyle = .overFullScreen
         context.present(vc, animated: false)
     }
 
-    private func switchToVC(_ screen: Screen) {
+    private func switchToVC(_ screen: Screen, setup: ((UIViewController) -> Void)? = nil ) {
         guard let window = window else { return }
 
         let vc = storyboard.instantiateViewController(withIdentifier: screen.rawValue)
+        setup?(vc)
         UIView.transition(with: window, duration: animationDuration, options: [.transitionFlipFromRight, .allowAnimatedContent], animations: {
             self.window?.rootViewController = vc
         }, completion:nil)
