@@ -30,13 +30,17 @@ class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDel
     }
 
     private func loadMatches() {
+        tableView.showLoader()
+
         AppDelegate.getNetwork().loadMatches(success: { [weak self] matches in
             self?.adapter.predictions = matches.map { Prediction(match: $0) }
             self?.updatePredictedCounter()
+            self?.tableView.hideLoader()
             self?.tableView.reloadData()
         }, failure: { [weak self] error in
             guard let `self` = self else { return }
-        
+
+            self.tableView.hideLoader()
             AlertPresenter.showError(text: error.localizedDescription, context: self)
         })
     }

@@ -20,15 +20,19 @@ class PredictionResultsViewController: UIViewController {
     }
 
     private func loadResults() {
+        tableView.showLoader()
+
         AppDelegate.getNetwork().loadResults(success: { [weak self] results in
             guard let `self` = self else { return }
 
             self.adapter.results = self.prepareResults(results)
+            self.tableView.hideLoader()
             self.tableView.reloadData()
 
         }, failure: { [weak self] error in
             guard let `self` = self else { return }
 
+            self.tableView.hideLoader()
             AlertPresenter.showError(text: error.localizedDescription, context: self)
         })
     }
