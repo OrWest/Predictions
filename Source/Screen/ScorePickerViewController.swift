@@ -1,9 +1,13 @@
 import UIKit
 
 class ScorePickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    private let appearDisappearDuration = 0.2
+    private let hideTransform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
     private let emptyScorePlaceholder = "-"
     static let maxScore = 99
 
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var darkView: UIView!
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var shadowView: UIView!
     @IBOutlet private weak var team1Label: UILabel!
@@ -32,6 +36,27 @@ class ScorePickerViewController: UIViewController, UIPickerViewDelegate, UIPicke
         shadowView.layer.shadowOffset = CGSize(width: 1, height: 2)
     }
 
+    private func appearContainerAndDarkView() {
+        darkView.alpha = 0.0
+        containerView.transform = hideTransform
+
+        UIView.animate(withDuration: appearDisappearDuration) {
+            self.darkView.alpha = 1.0
+            self.containerView.transform = .identity
+        }
+    }
+
+    private func disappearController() {
+
+        UIView.animate(withDuration: appearDisappearDuration, animations: {
+            self.darkView.alpha = 0.0
+            self.containerView.transform = self.hideTransform
+        }, completion: { [weak self] _ in
+            self?.dismissAction?()
+            self?.dismiss(animated: false)
+        })
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -43,6 +68,7 @@ class ScorePickerViewController: UIViewController, UIPickerViewDelegate, UIPicke
             team2ScorePicker.selectRow(score2 + 1, inComponent: 0, animated: false)
         }
 
+        appearContainerAndDarkView()
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -82,8 +108,6 @@ class ScorePickerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
 
     @IBAction private func closeAction() {
-        dismiss(animated: false) { [unowned self] in
-            self.dismissAction?()
-        }
+        disappearController()
     }
 }

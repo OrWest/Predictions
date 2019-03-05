@@ -16,7 +16,7 @@ class Router {
         self.window = window
     }
 
-    func showPredictionsMake() {
+    func showPredictionsMake(animated: Bool = true) {
         switchToVC(.predictionsMake)
     }
 
@@ -39,13 +39,17 @@ class Router {
         context.present(vc, animated: false)
     }
 
-    private func switchToVC(_ screen: Screen, setup: ((UIViewController) -> Void)? = nil ) {
+    private func switchToVC(_ screen: Screen, animated: Bool = true, setup: ((UIViewController) -> Void)? = nil ) {
         guard let window = window else { return }
 
         let vc = storyboard.instantiateViewController(withIdentifier: screen.rawValue)
         setup?(vc)
-        UIView.transition(with: window, duration: animationDuration, options: [.transitionFlipFromRight, .allowAnimatedContent], animations: {
-            self.window?.rootViewController = vc
-        }, completion:nil)
+        if animated {
+            UIView.transition(with: window, duration: animationDuration, options: [.transitionFlipFromRight, .allowAnimatedContent], animations: {
+                window.rootViewController = vc
+            }, completion:nil)
+        } else {
+            window.rootViewController = vc
+        }
     }
 }

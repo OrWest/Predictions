@@ -8,6 +8,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        router.showPredictionsMake()
+        router.showPredictionsMake(animated: false)
     }
 }
