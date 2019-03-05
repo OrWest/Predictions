@@ -1,6 +1,7 @@
 import UIKit
 
 class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDelegate {
+// TODO: show button and bar animated
 
     private enum ValidationError: Error {
         case emptyScore(Match)

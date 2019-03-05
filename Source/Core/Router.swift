@@ -17,7 +17,7 @@ class Router {
     }
 
     func showPredictionsMake(animated: Bool = true) {
-        switchToVC(.predictionsMake)
+        switchToVC(.predictionsMake, animated: animated)
     }
 
     func showPredictionsResults(predictions: [Prediction]) {

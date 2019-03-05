@@ -1,6 +1,7 @@
 import UIKit
 
 class PredictionResultsViewController: UIViewController {
+    // TODO: update cell appearance
 
     @IBOutlet private weak var tableView: UITableView!
 

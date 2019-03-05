@@ -10,16 +10,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--MainVC-->
         <scene sceneID="LIf-GQ-SDn">
             <objects>
-                <viewController id="yOu-hI-JRQ" customClass="MainViewController" customModule="Predictions" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yOu-hI-JRQ" customClass="MainVC" customModule="Predictions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L7G-BT-eTa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predictions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyf-HE-KEW">
+                                <rect key="frame" x="64.5" y="303.5" width="246" height="60"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87o-ae-xcJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Predictions" id="hki-04-6UC"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="87o-ae-xcJ" firstAttribute="trailing" secondItem="tZ1-BT-NkH" secondAttribute="trailing" id="4UA-Nn-Lxj"/>
+                            <constraint firstItem="87o-ae-xcJ" firstAttribute="leading" secondItem="tZ1-BT-NkH" secondAttribute="leading" id="M4k-Wu-QLk"/>
+                            <constraint firstItem="dyf-HE-KEW" firstAttribute="centerY" secondItem="L7G-BT-eTa" secondAttribute="centerY" id="R01-NO-3PM"/>
+                            <constraint firstItem="dyf-HE-KEW" firstAttribute="centerX" secondItem="L7G-BT-eTa" secondAttribute="centerX" id="wFo-gs-FlG"/>
+                            <constraint firstItem="87o-ae-xcJ" firstAttribute="top" secondItem="tZ1-BT-NkH" secondAttribute="top" id="xye-Ch-8im"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tZ1-BT-NkH"/>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="87o-ae-xcJ" id="NZ4-Za-ywa"/>
+                        <outlet property="titleLabel" destination="dyf-HE-KEW" id="5Z8-Va-HQg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFD-nk-Y5P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
