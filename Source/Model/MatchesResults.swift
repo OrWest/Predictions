@@ -11,13 +11,13 @@ struct MatchesResults: Codable {
 struct MatchResult: Codable {
     let team1: String
     let team2: String
-    let team1Points: Int
-    let team2Points: Int
+    let team1Score: Int
+    let team2Score: Int
     
     enum CodingKeys: String, CodingKey {
         case team1
         case team2
-        case team1Points = "team1_points"
-        case team2Points = "team2_points"
+        case team1Score = "team1_points"
+        case team2Score = "team2_points"
     }
 }

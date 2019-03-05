@@ -7,13 +7,6 @@ class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDel
         case emptyScoreForTeam(errorTeam: String, vsTeam: String)
     }
 
-    private var network: NetworkManager {
-        return AppDelegate.getNetwork()
-    }
-    private var router: Router {
-        return AppDelegate.getRouter()
-    }
-
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var navigationBar: UINavigationBar!
 
@@ -35,7 +28,7 @@ class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDel
     }
 
     private func loadMatches() {
-        network.loadMatches(success: { [weak self] matches in
+        AppDelegate.getNetwork().loadMatches(success: { [weak self] matches in
             self?.adapter.predictions = matches.map { Prediction(match: $0) }
             self?.tableView.reloadData()
         }, failure: { [weak self] error in
@@ -46,7 +39,7 @@ class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDel
     }
 
     func predictionWasSelected(prediction: Prediction) {
-        router.presentScorePicker(prediction: prediction, context: self) { [unowned self] in
+        AppDelegate.getRouter().presentScorePicker(prediction: prediction, context: self) { [unowned self] in
             self.tableView.reloadData()
         }
     }
@@ -63,7 +56,7 @@ class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDel
         do {
             try validatePredictions()
 
-            router.showPredictionsResults(predictions: adapter.predictions)
+            AppDelegate.getRouter().showPredictionsResults(predictions: adapter.predictions)
         } catch ValidationError.emptyScore(let match) {
             let text = String(format: "prediction_make_validation_empty_score".localized, match.team1, match.team2)
             AlertPresenter.showError(text: text, context: self)

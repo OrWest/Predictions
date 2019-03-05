@@ -20,15 +20,15 @@ class NetworkManager {
         }
     }
     
-    func loadResults(success: @escaping ([Match]) -> Void, failure: @escaping (Error) -> Void) {
+    func loadResults(success: @escaping ([MatchResult]) -> Void, failure: @escaping (Error) -> Void) {
         
-        AF.request(requestURL(with: "bhxgt")).responseDecodable { (response: DataResponse<MatchesInfo>) in
+        AF.request(requestURL(with: "178c0d")).responseDecodable { (response: DataResponse<MatchesResults>) in
             guard response.result.isSuccess else {
                 failure(response.result.error!)
                 return
             }
             
-            success(response.result.value!.matches)
+            success(response.result.value!.results)
         }
     }
     
