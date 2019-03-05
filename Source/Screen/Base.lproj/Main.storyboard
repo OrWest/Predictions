@@ -106,6 +106,26 @@
                                                 <action selector="autofillAction" destination="BYZ-38-t0r" id="Efs-by-32j"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="YMm-bg-Xfb">
+                                            <view key="customView" contentMode="scaleToFill" id="Zyr-6h-gPb">
+                                                <rect key="frame" x="276" y="5.5" width="83" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWF-Gl-dIe">
+                                                        <rect key="frame" x="0.0" y="6.5" width="83" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="oWF-Gl-dIe" firstAttribute="centerY" secondItem="Zyr-6h-gPb" secondAttribute="centerY" id="CdN-1O-bBv"/>
+                                                    <constraint firstItem="oWF-Gl-dIe" firstAttribute="leading" secondItem="Zyr-6h-gPb" secondAttribute="leading" id="cqQ-Fq-oYZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oWF-Gl-dIe" secondAttribute="trailing" id="zwc-tA-raM"/>
+                                                </constraints>
+                                            </view>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -126,7 +146,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="navigationBar" destination="QPm-0z-2ad" id="3Rc-dk-eJk"/>
+                        <outlet property="predictedCountLabel" destination="oWF-Gl-dIe" id="aew-Ta-w82"/>
                         <outlet property="tableView" destination="kT0-mY-FMG" id="yPc-uM-GFl"/>
                     </connections>
                 </viewController>

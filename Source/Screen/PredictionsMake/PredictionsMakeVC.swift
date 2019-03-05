@@ -8,7 +8,7 @@ class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDel
     }
 
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var predictedCountLabel: UILabel!
 
     private let adapter = PredictionsMakeAdapter()
     
@@ -25,11 +25,14 @@ class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDel
         tableView.dataSource = adapter
         tableView.delegate = adapter
         tableView.tableFooterView = UIView()
+
+        predictedCountLabel.text = nil
     }
 
     private func loadMatches() {
         AppDelegate.getNetwork().loadMatches(success: { [weak self] matches in
             self?.adapter.predictions = matches.map { Prediction(match: $0) }
+            self?.updatePredictedCounter()
             self?.tableView.reloadData()
         }, failure: { [weak self] error in
             guard let `self` = self else { return }
@@ -38,8 +41,14 @@ class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDel
         })
     }
 
+    private func updatePredictedCounter() {
+        let predicted = adapter.predictions.filter { $0.team1Score != nil && $0.team2Score != nil }.count
+        predictedCountLabel.text = "\(predicted)/\(adapter.predictions.count)"
+    }
+
     func predictionWasSelected(prediction: Prediction) {
         AppDelegate.getRouter().presentScorePicker(prediction: prediction, context: self) { [unowned self] in
+            self.updatePredictedCounter()
             self.tableView.reloadData()
         }
     }
@@ -49,6 +58,7 @@ class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDel
             prediction.team1Score = Int.random(max: ScorePickerViewController.maxScore)
             prediction.team2Score = Int.random(max: ScorePickerViewController.maxScore)
         }
+        updatePredictedCounter()
         tableView.reloadData()
     }
 
