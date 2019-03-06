@@ -53,7 +53,7 @@
         <!--Predictions Make View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="predictionsMake" id="BYZ-38-t0r" customClass="PredictionsMakeViewController" customModule="Predictions" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="predictionsMake" id="BYZ-38-t0r" customClass="PredictionsMakeVC" customModule="Predictions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,11 +126,6 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Predictions" id="Xoe-tu-VuP">
-                                        <barButtonItem key="leftBarButtonItem" title="Autofill" id="Dw3-gD-luF">
-                                            <connections>
-                                                <action selector="autofillAction" destination="BYZ-38-t0r" id="Efs-by-32j"/>
-                                            </connections>
-                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="YMm-bg-Xfb">
                                             <view key="customView" contentMode="scaleToFill" id="Zyr-6h-gPb">
                                                 <rect key="frame" x="276" y="5.5" width="83" height="33"/>
@@ -171,6 +166,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="confirmButton" destination="2ad-aI-W5h" id="AWX-Nr-uGG"/>
+                        <outlet property="navigationBar" destination="QPm-0z-2ad" id="0Xl-T7-KDv"/>
                         <outlet property="predictedCountLabel" destination="oWF-Gl-dIe" id="aew-Ta-w82"/>
                         <outlet property="tableView" destination="kT0-mY-FMG" id="yPc-uM-GFl"/>
                     </connections>

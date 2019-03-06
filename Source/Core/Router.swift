@@ -17,7 +17,13 @@ class Router {
     }
 
     func showPredictionsMake(animated: Bool = true) {
-        switchToVC(.predictionsMake, animated: animated)
+        switchToVC(.predictionsMake, animated: animated) { vc in
+            guard let controller = vc as? PredictionsMakeVC else {
+                return
+            }
+
+            controller.appearAnimated = !animated
+        }
     }
 
     func showPredictionsResults(predictions: [Prediction]) {

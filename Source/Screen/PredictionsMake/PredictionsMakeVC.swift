@@ -1,7 +1,7 @@
 import UIKit
 
-class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDelegate {
-// TODO: show button and bar animated
+class PredictionsMakeVC: UIViewController, PredictionsMakeAdapterDelegate {
+    private let confirmAppearDuration = 0.5
 
     private enum ValidationError: Error {
         case emptyScore(Match)
@@ -9,15 +9,40 @@ class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDel
     }
 
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var predictedCountLabel: UILabel!
+    @IBOutlet private weak var confirmButton: UIButton!
 
     private let adapter = PredictionsMakeAdapter()
-    
+    var appearAnimated = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureUI()
-        loadMatches()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if appearAnimated {
+            appearUIAnimated()
+        } else {
+            addAutofillButton(animated: false)
+            loadMatches()
+        }
+    }
+
+    private func appearUIAnimated() {
+        confirmButton.alpha = 0.0
+
+        UIView.animate(withDuration: confirmAppearDuration, animations: {
+            self.confirmButton.alpha = 1.0
+        }, completion: { [weak self] _ in
+            self?.loadMatches()
+        })
+
+        addAutofillButton(animated: true)
     }
 
     private func configureUI() {
@@ -28,6 +53,17 @@ class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDel
         tableView.tableFooterView = UIView()
 
         predictedCountLabel.text = nil
+    }
+
+    private func addAutofillButton(animated: Bool) {
+        let autofill = UIBarButtonItem(
+                title: "prediction_make_autofill".localized,
+                style: .plain,
+                target: self,
+                action: #selector(autofillAction)
+        )
+
+        navigationBar.topItem?.setLeftBarButton(autofill, animated: animated)
     }
 
     private func loadMatches() {
@@ -58,7 +94,8 @@ class PredictionsMakeViewController: UIViewController, PredictionsMakeAdapterDel
         }
     }
 
-    @IBAction private func autofillAction() {
+    @objc
+    private func autofillAction() {
         for prediction in adapter.predictions {
             prediction.team1Score = Int.random(max: ScorePickerViewController.maxScore)
             prediction.team2Score = Int.random(max: ScorePickerViewController.maxScore)
