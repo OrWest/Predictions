@@ -1,6 +1,6 @@
 import UIKit
 
-class ScorePickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ScorePickerVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     private let appearDisappearDuration = 0.2
     private let hideTransform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
     private let emptyScorePlaceholder = "-"
@@ -32,8 +32,10 @@ class ScorePickerViewController: UIViewController, UIPickerViewDelegate, UIPicke
         contentView.layer.cornerRadius = 8.0
 
         shadowView.layer.cornerRadius = contentView.layer.cornerRadius
-        shadowView.layer.shadowOpacity = 0.7
-        shadowView.layer.shadowOffset = CGSize(width: 1, height: 2)
+        shadowView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        shadowView.layer.shadowOpacity = 0.1
+        shadowView.layer.shadowRadius = 5
+        shadowView.layer.shadowColor = UIColor.black.cgColor
     }
 
     private func appearContainerAndDarkView() {
@@ -76,7 +78,7 @@ class ScorePickerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return ScorePickerViewController.maxScore + 2 // 0 + '-'
+        return ScorePickerVC.maxScore + 2 // 0 + '-'
     }
 
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {

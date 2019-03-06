@@ -37,7 +37,7 @@ class Router {
     }
 
     func presentScorePicker(prediction: Prediction, context: UIViewController, dismissAction: @escaping () -> Void) {
-        let vc = storyboard.instantiateViewController(withIdentifier: Screen.scorePicker.rawValue) as! ScorePickerViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: Screen.scorePicker.rawValue) as! ScorePickerVC
         vc.prediction = prediction
         vc.dismissAction = dismissAction
 

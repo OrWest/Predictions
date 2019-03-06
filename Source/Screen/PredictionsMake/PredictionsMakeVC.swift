@@ -97,8 +97,8 @@ class PredictionsMakeVC: UIViewController, PredictionsMakeAdapterDelegate {
     @objc
     private func autofillAction() {
         for prediction in adapter.predictions {
-            prediction.team1Score = Int.random(max: ScorePickerViewController.maxScore)
-            prediction.team2Score = Int.random(max: ScorePickerViewController.maxScore)
+            prediction.team1Score = Int.random(max: ScorePickerVC.maxScore)
+            prediction.team2Score = Int.random(max: ScorePickerVC.maxScore)
         }
         updatePredictedCounter()
         tableView.reloadData()

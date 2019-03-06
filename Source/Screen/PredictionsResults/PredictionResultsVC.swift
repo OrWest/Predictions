@@ -1,8 +1,6 @@
 import UIKit
 
 class PredictionResultsViewController: UIViewController {
-    // TODO: update cell appearance
-
     @IBOutlet private weak var tableView: UITableView!
 
     private let adapter = PredictionsResultsTableAdapter()
@@ -18,6 +16,8 @@ class PredictionResultsViewController: UIViewController {
     private func configureUI() {
         tableView.dataSource = adapter
         tableView.delegate = adapter
+        tableView.tableFooterView = UIView()
+        tableView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
     }
 
     private func loadResults() {

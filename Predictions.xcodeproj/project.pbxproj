@@ -10,11 +10,11 @@
 		471480EA2EA33A43E7A55F63 /* Int+exntesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471481F27980E25DEFCB8D59 /* Int+exntesion.swift */; };
 		4714818CC99093FE12F22B75 /* PredictionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148CB138780970849CE08F /* PredictionResult.swift */; };
 		4714827AA9E72829301E7A4A /* PredictionsMakeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471480B4C600C994BBC8BEA1 /* PredictionsMakeAdapter.swift */; };
-		471482832DBAEEF604F14127 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148717DF8DBEB3FB2F6D15 /* MainViewController.swift */; };
+		471482832DBAEEF604F14127 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47148717DF8DBEB3FB2F6D15 /* MainVC.swift */; };
 		471482847CB28E2530696FF9 /* PredictionResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714810B7021005861B9AE6D /* PredictionResultsVC.swift */; };
 		471482BC7CA13C141C9A3642 /* PredictionsMakeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471482874213C28ED93C1129 /* PredictionsMakeVC.swift */; };
 		4714836B61C894155E18DC59 /* PredictionMakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714821C000CDF9DA8153010 /* PredictionMakeCell.swift */; };
-		471483973114BCCE06B8B61B /* ScorePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471482DF2D457412A34B65FF /* ScorePickerViewController.swift */; };
+		471483973114BCCE06B8B61B /* ScorePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471482DF2D457412A34B65FF /* ScorePickerVC.swift */; };
 		47148541D6F010407D2981B5 /* PredictionsResultsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714868937D7836A72018A8A /* PredictionsResultsTableAdapter.swift */; };
 		4714860AB99D26D45DCA9B1D /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471482657B1C590F16FA3A33 /* String+extension.swift */; };
 		471489AB5EBB7F778C005776 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471482F8FE7CCFA2ADA35E19 /* Router.swift */; };
@@ -42,13 +42,13 @@
 		4714821C000CDF9DA8153010 /* PredictionMakeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionMakeCell.swift; sourceTree = "<group>"; };
 		471482657B1C590F16FA3A33 /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		471482874213C28ED93C1129 /* PredictionsMakeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionsMakeVC.swift; sourceTree = "<group>"; };
-		471482DF2D457412A34B65FF /* ScorePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorePickerViewController.swift; sourceTree = "<group>"; };
+		471482DF2D457412A34B65FF /* ScorePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorePickerVC.swift; sourceTree = "<group>"; };
 		471482F8FE7CCFA2ADA35E19 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		47148348F659EFC86B83051C /* UITableView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
 		4714850BB9AAE03392612406 /* Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		4714866B6A5A9DE78CE673EB /* PredictionResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionResultCell.swift; sourceTree = "<group>"; };
 		4714868937D7836A72018A8A /* PredictionsResultsTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionsResultsTableAdapter.swift; sourceTree = "<group>"; };
-		47148717DF8DBEB3FB2F6D15 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		47148717DF8DBEB3FB2F6D15 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		47148CB138780970849CE08F /* PredictionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionResult.swift; sourceTree = "<group>"; };
 		47148F4AB55FC24E64623645 /* Prediction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
 		67040FE44E36C8FD3402A8DB /* Pods-Predictions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Predictions.release.xcconfig"; path = "Target Support Files/Pods-Predictions/Pods-Predictions.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,9 +171,9 @@
 			children = (
 				97AAD1DD222DA1F300BBC7F5 /* Main.storyboard */,
 				47148877CDF7BE240A7C5552 /* PredictionsMake */,
-				471482DF2D457412A34B65FF /* ScorePickerViewController.swift */,
+				471482DF2D457412A34B65FF /* ScorePickerVC.swift */,
 				47148042ECB4EAA9A4AEDBA4 /* PredictionsResults */,
-				47148717DF8DBEB3FB2F6D15 /* MainViewController.swift */,
+				47148717DF8DBEB3FB2F6D15 /* MainVC.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 				4714836B61C894155E18DC59 /* PredictionMakeCell.swift in Sources */,
 				47148BB09547D4091D8CF3BC /* Formatter.swift in Sources */,
 				471489AB5EBB7F778C005776 /* Router.swift in Sources */,
-				471483973114BCCE06B8B61B /* ScorePickerViewController.swift in Sources */,
+				471483973114BCCE06B8B61B /* ScorePickerVC.swift in Sources */,
 				4714860AB99D26D45DCA9B1D /* String+extension.swift in Sources */,
 				471480EA2EA33A43E7A55F63 /* Int+exntesion.swift in Sources */,
 				471482847CB28E2530696FF9 /* PredictionResultsVC.swift in Sources */,
@@ -349,7 +349,7 @@
 				4714818CC99093FE12F22B75 /* PredictionResult.swift in Sources */,
 				47148541D6F010407D2981B5 /* PredictionsResultsTableAdapter.swift in Sources */,
 				47148F5C94098B8355B2B555 /* UITableView+extension.swift in Sources */,
-				471482832DBAEEF604F14127 /* MainViewController.swift in Sources */,
+				471482832DBAEEF604F14127 /* MainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
