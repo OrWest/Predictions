@@ -7,12 +7,6 @@ class MainVC: UIViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var navigationBar: UINavigationBar!
 
-    @objc func injected() {
-        titleLabel.transform = .identity
-
-        animateLabel()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
